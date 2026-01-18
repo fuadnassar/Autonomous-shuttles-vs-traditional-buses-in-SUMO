@@ -14,7 +14,6 @@ This repository presents a comparative simulation study between **conventional b
 ## Requirements
 
 - SUMO (with GUI support)
-- macOS / Linux
 - `sumo-gui` available in PATH
 
 Check installation:
