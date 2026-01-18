@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+    <input>
+        <net-file value="network.net.xml"/>
+        <route-files value="arts.rou.xml,persons.rou.xml"/>
+    </input>
+
+    <output>
+            <tripinfo-output value="output/tripinfo.xml"/>
+            
+            <summary-output value="output/summary.xml"/>
+            
+            <statistic-output value="output/statistics.xml"/>
+                        
+            <emission-output value="output/emissions.xml"/>
+            
+            <vehroute-output value="output/vehroutes.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        
+    </time>
+    
+    <taxi_device>
+            <device.taxi.dispatch-algorithm value="greedyShared"/>
+    </taxi_device>
+    
+
+  
+</sumoConfiguration>

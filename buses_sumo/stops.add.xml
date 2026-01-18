@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-12-28T00:22:26.139556+01:00 by Eclipse SUMO netedit v1_25_0+0150-04664dcec11
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!-- StoppingPlaces -->
+    <busStop id="bs_0" lane="E18_1" startPos="0.93" endPos="10.93"/>
+    <busStop id="bs_1" lane="E37_0" startPos="94.29" endPos="104.29"/>
+    <busStop id="bs_10" lane="E17_0" startPos="233.97" endPos="243.97"/>
+    <busStop id="bs_11" lane="E16_0" startPos="96.49" endPos="106.49"/>
+    <busStop id="bs_12" lane="-E10_0" startPos="118.52" endPos="128.52"/>
+    <busStop id="bs_13" lane="-E6_0" startPos="76.56" endPos="86.56"/>
+    <busStop id="bs_14" lane="E50_0" startPos="5.92" endPos="15.92"/>
+    <busStop id="bs_15" lane="E8_0" startPos="1.68" endPos="11.68"/>
+    <busStop id="bs_16" lane="E7_0" startPos="1.48" endPos="11.48"/>
+    <busStop id="bs_17" lane="E22_1" startPos="105.19" endPos="115.19"/>
+    <busStop id="bs_18" lane="E2_0" startPos="1.89" endPos="11.89"/>
+    <busStop id="bs_19" lane="-E29_0" startPos="194.36" endPos="204.36"/>
+    <busStop id="bs_2" lane="E32_0" startPos="39.50" endPos="49.50"/>
+    <busStop id="bs_20" lane="E46_0" startPos="128.86" endPos="138.86"/>
+    <busStop id="bs_21" lane="E24_0" startPos="127.73" endPos="137.73"/>
+    <busStop id="bs_22" lane="-E46_0" startPos="0.78" endPos="10.78"/>
+    <busStop id="bs_23" lane="E42_0" startPos="64.60" endPos="74.60"/>
+    <busStop id="bs_24" lane="-E22_0" startPos="88.24" endPos="98.24"/>
+    <busStop id="bs_25" lane="-E32_0" startPos="67.86" endPos="77.86"/>
+    <busStop id="bs_26" lane="-E37_0" startPos="100.08" endPos="110.08"/>
+    <busStop id="bs_27" lane="E29_0" startPos="122.98" endPos="132.98"/>
+    <busStop id="bs_28" lane="-E24_0" startPos="14.43" endPos="24.43"/>
+    <busStop id="bs_29" lane="-E49_0" startPos="9.89" endPos="19.89"/>
+    <busStop id="bs_3" lane="E39_0" startPos="154.33" endPos="164.33"/>
+    <busStop id="bs_30" lane="-E42_0" startPos="15.12" endPos="25.12"/>
+    <busStop id="bs_31" lane="-E50_0" startPos="91.50" endPos="101.50"/>
+    <busStop id="bs_32" lane="E10_0" startPos="140.08" endPos="150.08"/>
+    <busStop id="bs_33" lane="-E64_0" startPos="0.53" endPos="10.53"/>
+    <busStop id="bs_34" lane="E6_0" startPos="27.44" endPos="37.44"/>
+    <busStop id="bs_35" lane="-E63_0" startPos="8.12" endPos="18.12"/>
+    <busStop id="bs_36" lane="-E16_0" startPos="155.62" endPos="165.62"/>
+    <busStop id="bs_37" lane="-E17_0" startPos="39.75" endPos="49.75"/>
+    <busStop id="bs_38" lane="-E65_0" startPos="149.13" endPos="159.13"/>
+    <busStop id="bs_39" lane="-E70_0" startPos="5.78" endPos="15.78"/>
+    <busStop id="bs_4" lane="E44_0" startPos="254.95" endPos="264.95"/>
+    <busStop id="bs_40" lane="-E67_0" startPos="175.98" endPos="185.98"/>
+    <busStop id="bs_41" lane="-E18_0" startPos="67.03" endPos="77.03"/>
+    <busStop id="bs_42" lane="-E8_0" startPos="15.15" endPos="25.15"/>
+    <busStop id="bs_43" lane="-E7_0" startPos="74.08" endPos="84.08"/>
+    <busStop id="bs_44" lane="-E39_0" startPos="6.30" endPos="16.30"/>
+    <busStop id="bs_45" lane="-E2_0" startPos="13.90" endPos="23.90"/>
+    <busStop id="bs_5" lane="E64_0" startPos="158.41" endPos="168.41"/>
+    <busStop id="bs_6" lane="E63_0" startPos="98.58" endPos="108.58"/>
+    <busStop id="bs_7" lane="E65_0" startPos="51.21" endPos="61.21"/>
+    <busStop id="bs_8" lane="E70_0" startPos="124.26" endPos="134.26"/>
+    <busStop id="bs_9" lane="E67_0" startPos="157.56" endPos="167.56"/>
+</additional>

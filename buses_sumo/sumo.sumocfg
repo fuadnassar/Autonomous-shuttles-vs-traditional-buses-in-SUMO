@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-01-17T21:12:05.452181+01:00 by Eclipse SUMO sumo v1_25_0+0150-04664dcec11
+-->
+
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="network.net.xml"/>
+        <route-files value="buses.rou.xml,persons.rou.xml"/>
+        <additional-files value="stops.add.xml"/>
+    </input>
+
+
+
+    <output>
+            <tripinfo-output value="output/tripinfo.xml"/>
+            
+            <summary-output value="output/summary.xml"/>
+            
+            <statistic-output value="output/statistics.xml"/>
+                        
+            <emission-output value="output/emissions.xml"/>
+            
+            <vehroute-output value="output/vehroutes.xml"/>
+    </output>
+
+
+</sumoConfiguration>

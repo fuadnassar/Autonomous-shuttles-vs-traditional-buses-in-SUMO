@@ -1,0 +1,9 @@
+Category,KPI,Bus (Current),ARTS (Future)
+User Accessibility,Avg Walk Distance [m],258.04,0
+User Accessibility,Avg Walk Time [s],233.56,0
+User Accessibility,Avg Station Waiting Time [s],143.66,0
+User Accessibility,Total Demand [Trips],2830.0,0
+System Performance,Avg Travel Time [min],6.81,0
+System Performance,Total Distance [km],2079.89,0
+System Performance,Avg In-Vehicle Time [s],408.86,0
+System Performance,Avg System Delay [s],176.81,0
