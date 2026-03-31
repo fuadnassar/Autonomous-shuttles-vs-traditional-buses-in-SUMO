@@ -68,7 +68,6 @@ cd Autonomous-shuttles-vs-traditional-buses-in-SUMO
 pip install -r requirements.txt
 ```
 
----
 
 ## 🏃‍♂️ Usage
 
@@ -88,7 +87,6 @@ cd scenarios/fixed_route_buses/
 sumo-gui sumo.sumocfg
 ```
 
----
 
 ## 🧠 Key Components
 
