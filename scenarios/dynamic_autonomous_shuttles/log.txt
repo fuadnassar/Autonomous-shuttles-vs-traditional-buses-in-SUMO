@@ -1,0 +1,8 @@
+***Starting server on port 49990 ***
+Loading net-file from 'network.net.xml' ... done (56ms).
+Loading route-files incrementally from 'persons.rou.xml'
+Loading route-files incrementally from 'arts.rou.xml'
+Loading done.
+Error: The busStop 'bs_23' is not known in person 't_0'.
+Error: Invalid stop definition in person 't_0'.
+Quitting (on error).

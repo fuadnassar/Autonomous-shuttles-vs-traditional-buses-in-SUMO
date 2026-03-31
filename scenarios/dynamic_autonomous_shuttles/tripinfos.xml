@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-03-04T16:57:51.035645+01:00 by Eclipse SUMO sumo v1_25_0+0150-04664dcec11
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="network.net.xml"/>
+        <route-files value="persons.rou.xml,arts.rou.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="tripinfos.xml"/>
+        <tripinfo-output.write-unfinished value="true"/>
+        <stop-output value="stops_tripinfos.xml"/>
+    </output>
+
+    <routing>
+        <routing-algorithm value="dijkstra"/>
+    </routing>
+
+    <report>
+        <log value="log.txt"/>
+    </report>
+
+    <taxi_device>
+        <device.taxi.dispatch-algorithm value="traci"/>
+    </taxi_device>
+
+    <traci_server>
+        <remote-port value="49990"/>
+    </traci_server>
+
+</sumoConfiguration>
+-->
+
+<tripinfos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tripinfo_file.xsd">
+</tripinfos>

@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="arts" vClass="taxi" personCapacity="12">
+        <param key="has.taxi.device" value="true"/>
+        <param key="device.taxi.share" value="true"/>
+        <param key="device.taxi.dispatch-period" value="1"/>
+        <param key="device.taxi.pickUpDuration" value="0"/>
+        <param key="device.taxi.dropOffDuration" value="0"/>
+        <param key="device.taxi.idle-algorithm" value="stop"/>
+    </vType>
+    <trip id="drt_0" type="arts" depart="0">
+        <stop lane="E5_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_1" type="arts" depart="0">
+        <stop lane="E5_0" startPos="6" endPos="11" triggered="person"/>
+    </trip>
+    <trip id="drt_2" type="arts" depart="0">
+        <stop lane="E5_0" startPos="12" endPos="17" triggered="person"/>
+    </trip>
+    <trip id="drt_3" type="arts" depart="0">
+        <stop lane="-E52_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_4" type="arts" depart="0">
+        <stop lane="-E52_0" startPos="6" endPos="11" triggered="person"/>
+    </trip>
+    <trip id="drt_5" type="arts" depart="0">
+        <stop lane="-E62_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_6" type="arts" depart="0">
+        <stop lane="-E15_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_7" type="arts" depart="0">
+        <stop lane="-E24_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_8" type="arts" depart="0">
+        <stop lane="E11_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_9" type="arts" depart="0">
+        <stop lane="-E12_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_10" type="arts" depart="0">
+        <stop lane="-E32_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_11" type="arts" depart="0">
+        <stop lane="-E64_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_12" type="arts" depart="0">
+        <stop lane="-E50_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_13" type="arts" depart="0">
+        <stop lane="E49_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_14" type="arts" depart="0">
+        <stop lane="-E0_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_15" type="arts" depart="0">
+        <stop lane="-E20_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_16" type="arts" depart="0">
+        <stop lane="-E55_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_17" type="arts" depart="0">
+        <stop lane="-E41_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_18" type="arts" depart="0">
+        <stop lane="-E39_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+    <trip id="drt_19" type="arts" depart="0">
+        <stop lane="-E46_0" startPos="0" endPos="5" triggered="person"/>
+    </trip>
+</routes>

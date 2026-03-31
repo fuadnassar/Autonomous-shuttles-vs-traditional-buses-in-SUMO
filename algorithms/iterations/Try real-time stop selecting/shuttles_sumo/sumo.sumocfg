@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="network.net.xml"/>
+        <route-files value="arts.rou.xml"/>
+        <additional-files value="as_stops.add.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="output/tripinfo.xml"/>
+        <tripinfo-output.write-unfinished value="true"/>
+        <summary-output value="output/summary.xml"/>
+        <statistic-output value="output/statistics.xml"/>
+        <emission-output value="output/emissions.xml"/>
+        <vehroute-output value="output/vehroutes.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <!-- <end value="500"/> -->
+
+    </time>
+
+
+  <gui_only>
+        <quit-on-end value="true"/>
+        <!-- <start value="true"/> -->
+    </gui_only>
+
+
+  <!-- <device.taxi.dispatch-algorithm value="traci"/> -->
+
+    <!-- <device.taxi.dispatch-algorithm value="greedy"/> -->
+    <!-- <device.taxi.dispatch-period value="1"/> -->
+    <!-- <device.taxi.dispatch-algorithm.params value="relLossThreshold=1.5,absLossThreshold=300"/>  -->
+
+</sumoConfiguration>
+
