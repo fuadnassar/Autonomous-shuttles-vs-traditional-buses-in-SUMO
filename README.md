@@ -13,7 +13,6 @@ The project evaluates and compares the performance of **Traditional Fixed-Route 
 5. [Key Components](#key-components)
 6. [License](#license)
 
----
 
 ## 🚀 Project Overview
 
@@ -24,7 +23,6 @@ Modern urban mobility requires efficient, scalable, and dynamic solutions. This 
 * **DAST System:** Stop-to-stop on-demand routing, dynamic dispatching, and midi-sized autonomous shuttles.
 * **Performance Metrics:** Passenger wait times, travel times, fleet utilization, and system scalability under heavy synthetic demand.
 
----
 
 ## 📂 Repository Structure
 
@@ -52,7 +50,6 @@ Autonomous-shuttles-vs-traditional-buses-in-SUMO/
 └── requirements.txt                     # Required Python packages (traci, sumolib, pandas, etc.)
 ```
 
----
 
 ## ⚙️ Prerequisites & Installation
 
