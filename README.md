@@ -99,13 +99,13 @@ sumo-gui sumo.sumocfg
 ### DRT Manager
 Located in `algorithms/drt_manager/`, this algorithm acts as the core engine for the DAST system, utilizing asynchronous event listeners (similar to WebSocket protocols), cached system states, and marginal cost optimization to handle massive demand with minimal computational overhead. 
 
-See the [DRT Manager README](algorithms/drt_manager/) for deeper technical details and specific configuration arguments.
+See the [DRT Manager README](algorithms/drt_manager/) for deeper technical details and specific configuration arguments. 
 
 ---
  
 ## ⚖️ License
 
-This project is licensed under a custom **Non-Commercial Academic License**. 
+This project is licensed under a custom **Non-Commercial Academic License**.  
 
 Researchers and students are free to use, modify, and test this code for academic purposes. **Commercial use, including using this software to build a company, product, or service, is strictly prohibited** without prior written permission from the author. 
 
