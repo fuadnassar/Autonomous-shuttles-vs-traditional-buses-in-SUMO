@@ -44,7 +44,7 @@ class drt_manager_Listener(traci.StepListener):
                     
                     # print(f"🕒 {original_id} arrived at {current_time}s! Scheduled return trip at {return_time}s.")
         # =================================================================
-#
+
         buses = [v for v in traci.vehicle.getIDList() if traci.vehicle.getTypeID(v) == "arts"]
         active_persons = set(traci.person.getIDList())
 

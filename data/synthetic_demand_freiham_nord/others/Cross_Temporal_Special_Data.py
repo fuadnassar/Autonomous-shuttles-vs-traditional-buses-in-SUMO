@@ -34,7 +34,7 @@ class CrossTemporalSpecialData:
         elif col_lower.startswith('accompaniment'):
             return 'Accompaniment'
         return None
-#
+
     def run(self):
         print("Loading data...")
         try:

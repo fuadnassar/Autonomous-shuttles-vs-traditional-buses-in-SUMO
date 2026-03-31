@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 
 ROUTE_CACHE = {}
 
-# ---> NEW: Global Caches for Stop Spaces and Bus Sizes <---
+# ---> NEW: Global Caches for Stop Spaces and Bus Sizes <---#
 AVAILABLE_STOPS_SPACE = {}
 BUS_LENGTHS = {}
 
