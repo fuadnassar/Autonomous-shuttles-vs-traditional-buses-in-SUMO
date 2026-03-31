@@ -67,7 +67,7 @@ Ensure SUMO is installed on your system and the `SUMO_HOME` environment variable
 Clone the repository and install the required Python packages:
 
 ```bash
-git clone [https://github.com/yourusername/Autonomous-shuttles-vs-traditional-buses-in-SUMO.git](https://github.com/yourusername/Autonomous-shuttles-vs-traditional-buses-in-SUMO.git)
+git clone [https://github.com/fuadnassar/Autonomous-shuttles-vs-traditional-buses-in-SUMO.git](https://github.com/fuadnassar/Autonomous-shuttles-vs-traditional-buses-in-SUMO.git)
 cd Autonomous-shuttles-vs-traditional-buses-in-SUMO
 pip install -r requirements.txt
 ```
