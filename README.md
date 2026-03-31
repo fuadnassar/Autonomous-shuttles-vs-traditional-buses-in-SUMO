@@ -7,7 +7,6 @@ The project evaluates and compares the performance of **Traditional Fixed-Route 
 <p align="center">
   <img src="data/Systems.png" alt="DAST vs FRB Comparison" width="500">
 </p>
----
 
 ## 📑 Table of Contents
 1. [Project Overview](#project-overview)
