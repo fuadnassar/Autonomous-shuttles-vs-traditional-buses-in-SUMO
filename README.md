@@ -102,7 +102,7 @@ Located in `algorithms/drt_manager/`, this algorithm acts as the core engine for
 See the [DRT Manager README](algorithms/drt_manager/) for deeper technical details and specific configuration arguments.
 
 ---
-
+ 
 ## ⚖️ License
 
 This project is licensed under a custom **Non-Commercial Academic License**. 

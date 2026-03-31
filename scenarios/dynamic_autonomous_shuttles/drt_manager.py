@@ -92,7 +92,7 @@ def run(max_dropoff_delay, max_pickup_delay, realtime_requests_limit, demand_sca
             
         current_time = traci.simulation.getTime()
         
-
+#
         # try:
         #     persons.check_and_inject_persons(current_time, pending_persons)
         # except traci.exceptions.TraCIException as ex:

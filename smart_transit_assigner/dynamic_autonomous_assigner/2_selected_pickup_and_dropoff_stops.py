@@ -162,7 +162,7 @@ def analyze_stops_adaptive(od_file, net_xml, stops_xml, output_xlsx):
             if not o_filtered or not d_filtered:
                 continue 
 
-            # SEARCH STEP 1: Best Pickup Stop
+            # SEARCH STEP 1: Best Pickup Stop   
             max_pickup_score = -float('inf')
             
             for s_o in o_filtered:

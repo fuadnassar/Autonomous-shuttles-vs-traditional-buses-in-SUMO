@@ -26,7 +26,7 @@ def generate_busstop_routes(input_excel, output_xml):
         # Header
         f.write('<?xml version="1.0" ?>\n')
         f.write('<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">\n')
-
+#
         # Iterate through the newly sorted dataframe
         for index, row in df.iterrows():
             try:
