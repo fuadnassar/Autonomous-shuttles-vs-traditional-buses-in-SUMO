@@ -97,7 +97,7 @@ sumo-gui sumo.sumocfg
 ## 🧠 Key Components
 
 ### DRT Manager
-Located in `algorithms/drt_manager/`, this is a high-performance, deterministic dispatching algorithm. It acts as the core engine for the DAST system, utilizing asynchronous event listeners (similar to WebSocket protocols), cached system states, and marginal cost optimization to handle massive demand with minimal computational overhead. 
+Located in `algorithms/drt_manager/`, this algorithm acts as the core engine for the DAST system, utilizing asynchronous event listeners (similar to WebSocket protocols), cached system states, and marginal cost optimization to handle massive demand with minimal computational overhead. 
 
 See the [DRT Manager README](algorithms/drt_manager/README.md) for deeper technical details and specific configuration arguments.
 
