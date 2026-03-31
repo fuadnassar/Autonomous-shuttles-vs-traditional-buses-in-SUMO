@@ -4,7 +4,7 @@ import drt_manager_lib as lib
 import drt_manager_listener as listener
 import drt_manager_personal_plans as persons
 def run(max_dropoff_delay, max_pickup_delay, realtime_requests_limit, demand_scale, use_gui):
-    bus_stops = lib.get_bus_stops("as_stops.add.xml")
+    # bus_stops = lib.get_bus_stops("as_stops.add.xml")
     
     # Check the flag to determine which binary to use
     sumo_binary = "sumo-gui" if use_gui else "sumo"

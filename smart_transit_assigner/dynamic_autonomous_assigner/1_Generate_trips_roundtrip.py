@@ -85,7 +85,7 @@ def process_personal_plans(net_file, input_excel, output_file):
 
 # --- SETTINGS ---
 process_personal_plans(
-    net_file='../network.net.xml', 
+    net_file='network.net.xml', 
     input_excel='personal_planes.xlsx', 
     output_file='Final_Person_Network_Mapping.xlsx'
 )

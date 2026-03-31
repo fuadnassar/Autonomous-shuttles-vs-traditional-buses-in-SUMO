@@ -1,43 +1,233 @@
 # DRT Manager
 
-## Overview
-DRT Manager is a high-performance Demand Responsive Transport (DRT) algorithm developed by Fuad Nassar as part of a Master’s thesis at the Technical University of Munich (TUM). 
+DRT Manager is a high-performance dispatching algorithm developed by Fuad Nassar during his master thesis at TUM to operate Dynamic Autonomous Stop-Based Transit (DAST) system.
 
-Rather than a standard routing framework, this project is fundamentally an algorithmic solution designed to operate a constrained fleet of autonomous midi-buses under extreme high-demand conditions. It focuses on real-time vehicle assignment, route optimization, and strict service-level control, enabling efficient operation in dense urban scenarios without computational bottlenecks.
+It is designed to efficiently handle high-density demand, serving 5,000–15,000 daily trips using a limited fleet of midi-sized autonomous buses.
 
-## Algorithm Characteristics
-* **Dynamic Assignment:** Evaluates and assigns passenger requests to vehicles using a strict marginal-cost approach.
-* **Constraint-Based Enforcement:** Rejects routing assignments that violate maximum allowable pickup or drop-off delays.
-* **Incremental Route Optimization:** Dynamically inserts pickup and drop-off points, reordering stops to minimize travel time while maintaining capacity feasibility.
-* **Event-Driven Execution:** Bypasses standard loop-based simulation polling by utilizing a TraCI step listener to react to simulation events asynchronously.
-* **Efficient State Management:** Utilizes hash-based data structures to achieve O(1) time complexity for state lookups during heavy load.
 
-## Core Logic
-The algorithm operates within a discrete simulation loop using SUMO (Simulation of Urban MObility) and TraCI:
 
-* **Request Processing:** Passenger demand is not live; it is injected from a predefined synthetic dataset and processed incrementally at each simulation step.
-* **Vehicle Assignment:** Each active request is evaluated against the available fleet. The algorithm calculates the marginal cost (added delay) of inserting the passenger into a vehicle's manifest.
-* **Constraint Validation:** The algorithm strictly enforces two parameters before assignment: 
-  1. Maximum delay threshold for passengers already onboard.
-  2. Maximum drift from the initially promised ETA for passengers waiting at a stop.
-* **Route Optimization:** If constraints are satisfied, the vehicle's route is updated incrementally.
+# Algorithm Overview
 
-## Usage
+DRT Manager is a deterministic, event-driven algorithm that maximizes computational efficiency by leveraging asynchronous event listeners, utilizing principles comparable to WebSocket protocols.
 
-### Execution
+The system combines:
+
+- Event-driven execution (listener-based)
+- Cached system state for constant-time access
+- Constraint-based dispatching
+- Marginal cost optimization
+- Dynamic route sequencing
+
+This structure enables stable operation under high load with minimal fleet resources.
+
+---
+# Usage
+
+Run the simulation:
+
 ```bash
-# Basic run with default parameters
-python drt_manager.py
+python drt_manager.py --dropoff-delay 60 --pickup-delay 120 
+```
 
-# Run with custom parameters and GUI
-python drt_manager.py --dropoff-delay 60 --pickup-delay 120 --rt-limit 2 --scale 1 -gui
-ArgumentsArgumentDescriptionDefault--dropoff-delayMaximum allowed detour delay for onboard passengers (seconds).60--pickup-delayMaximum allowed drift from promised pickup ETA (seconds).120--rt-limitMaximum number of real-time requests processed per simulation step.2--scaleDemand scaling factor for stress testing.1-guiLaunches the simulation using the SUMO graphical interface.DisabledPorting the Algorithm to Another CityThe DRT Manager algorithm is network-agnostic and can be adapted to simulate demand-responsive transit in any city. To port the project, update the following input data:Network Configuration: Replace the existing SUMO network (.net.xml) and simulation configuration (sumo.sumocfg) with your target city's network.Stops Definition: Update the as_stops.add.xml file to map bus stops to the exact lane IDs of the new network.Demand Data: Replace data/personal_planes.xlsx. The algorithm requires origin coordinates (X,Y), destination coordinates (X,Y), and departure times. The system will automatically map these coordinates to the nearest valid stops.Fleet Configuration: Adjust vehicle definitions (fleet size, capacity, vehicle type) within the SUMO configuration files to match your simulation parameters.Project StructurePlaintextproject/
-├── drt_manager.py                 # Core simulation loop and TraCI execution
-├── drt_manager_lib.py             # Optimization, routing, and cost calculation logic
-├── drt_manager_listener.py        # Event-driven step listener and fleet state manager
-├── drt_manager_personal_plans.py  # Demand processing and topology mapping
-├── data/
-│   └── personal_planes.xlsx       # Predefined synthetic demand dataset
-├── sumo.sumocfg                   # SUMO simulation configuration
-└── as_stops.add.xml               # Bus stop definitions and lane mappings
-LicenseThis project is licensed under the MIT License.
+Run with GUI:
+
+```bash
+python drt_manager.py --gui
+```
+
+---
+
+# Arguments
+
+The DRT Manager can be configured using the following command-line arguments. 
+
+| Argument | Type | Default | Description |
+| :--- | :---: | :---: | :--- |
+| `--dropoff-delay` | `int` | `60` | Maximum acceptable delay (in seconds) for passenger drop-offs. |
+| `--pickup-delay` | `int` | `120` | Maximum acceptable delay (in seconds) for passenger pickups. |
+| `--gui` | `flag` | `False` | Launches the simulation using the SUMO-GUI instead of the command-line version. |
+| `--help`, `-h` | `flag` | `-` | Displays the help message and lists all available command-line arguments. |
+
+---
+# Important Parts of the Code
+
+## Event Listener (Real-Time Engine)
+
+The algorithm uses a step-based listener similar to WebSocket-driven systems, allowing continuous updates of system state.
+
+```python
+class drt_manager_Listener(traci.StepListener):
+    def step(self, t=0):
+        # Executes every simulation step
+        return True
+```
+
+Advantages:
+
+- Immediate reaction to events  
+- No polling overhead  
+- Scalable under high demand  
+- Continuous synchronization  
+
+---
+
+## Cached System State
+
+Global caching is used to eliminate repeated computations and improve performance.
+
+```python
+AVAILABLE_STOPS_SPACE = {}
+BUS_LENGTHS = {}
+ROUTE_CACHE = {}
+```
+
+Example:
+
+```python
+def get_travel_time(start_edge, end_edge):
+    if (start_edge, end_edge) not in ROUTE_CACHE:
+        route = traci.simulation.findRoute(start_edge, end_edge)
+        ROUTE_CACHE[(start_edge, end_edge)] = route.travelTime
+    return ROUTE_CACHE[(start_edge, end_edge)]
+```
+
+---
+
+## Constraint-Based Dispatching
+
+All assignments are validated using strict service constraints.
+
+```python
+if delay > max_dropoff_delay:
+    is_valid = False
+```
+
+Constraints include:
+
+- Maximum pickup delay  
+- Maximum drop-off delay  
+- Vehicle capacity  
+
+---
+
+## Marginal Cost Optimization
+
+Vehicle selection is based on minimizing system-wide cost increase.
+
+```python
+margin = new_total_time - base_total_time
+```
+
+Only valid and efficient assignments are accepted.
+
+---
+
+## Dynamic Route Optimization
+
+Each vehicle maintains a continuously optimized route (manifest).
+
+```python
+manifest = optimize_route_sequence(bus, manifest, new_res)
+```
+
+Features:
+
+- Pickup and drop-off sequencing  
+- Capacity-aware routing  
+- Travel-time-based decisions  
+
+---
+
+## Idle Vehicle Management
+
+Idle vehicles are dynamically redistributed to avoid congestion.
+
+```python
+def request_idle_parking(bus_id, stop_id):
+    if available_space > bus_length:
+        return True
+```
+
+If a stop is full:
+
+```python
+next_stop = find_next_open_stop(bus_id)
+```
+
+---
+
+# Using DRT Manager in Another City
+
+## 1. Replace Network
+
+Update SUMO configuration files:
+
+- `sumo.sumocfg`
+- Network (`.net.xml`)
+- Stops (`.add.xml`)
+
+---
+
+## 2. Load Stops
+
+```python
+bus_stops = lib.get_bus_stops("your_stops.xml")
+```
+
+---
+
+## 3. Configure Fleet
+
+```python
+buses = [v for v in traci.vehicle.getIDList() if traci.vehicle.getTypeID(v) == "arts"]
+```
+
+---
+
+## 4. Inject Demand
+
+```python
+traci.person.add(person_id, edge, pos=pos)
+traci.person.appendDrivingStage(person_id, destination_edge, "taxi")
+```
+
+Supported demand types:
+
+- synthetic demand  
+- external datasets  
+- predefined schedules  
+
+---
+
+# Performance Characteristics
+
+- Handles high-density demand scenarios  
+- Operates with a limited fleet  
+- Maintains bounded service delays  
+- Minimizes computational overhead  
+
+---
+
+# Summary
+
+DRT Manager is a scalable dispatching algorithm for dynamic transit systems.
+
+It combines:
+
+- event-driven architecture  
+- efficient data structures  
+- strict service constraints  
+
+to achieve high operational performance with minimal resources.
+
+---
+
+# License
+
+This project is licensed under a custom **Non-Commercial Academic License**. 
+
+Researchers and students are free to use, modify, and test this code for academic purposes. **Commercial use, including using this software to build a company, product, or service, is strictly prohibited** without prior written permission. 
+
+See the [LICENSE](LICENSE) file for full legal details. For commercial licensing inquiries, please contact the author directly.
+
+---

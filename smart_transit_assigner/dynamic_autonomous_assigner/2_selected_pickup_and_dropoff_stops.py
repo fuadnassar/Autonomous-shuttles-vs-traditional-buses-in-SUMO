@@ -245,7 +245,7 @@ def analyze_stops_adaptive(od_file, net_xml, stops_xml, output_xlsx):
 # --- RUN SCRIPT ---
 analyze_stops_adaptive(
     od_file='personal_planes.xlsx', 
-    net_xml='../network.net.xml', 
-    stops_xml='../as_stops.add.xml', 
+    net_xml='network.net.xml', 
+    stops_xml='as_stops.add.xml', 
     output_xlsx='new_table.xlsx' # Updated target output file
 )

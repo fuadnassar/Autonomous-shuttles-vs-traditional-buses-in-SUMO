@@ -88,6 +88,6 @@ def generate_busstop_routes(input_excel, output_xml):
 
 # --- Execution ---
 input_file = 'new_table.xlsx'
-output_file = 'person_plans.rou.xml'
+output_file = 'persons.rou.xml'
 
 generate_busstop_routes(input_file, output_file)
