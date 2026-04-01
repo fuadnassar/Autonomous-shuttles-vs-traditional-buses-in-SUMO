@@ -16,7 +16,7 @@ The project evaluates and compares the performance of **Traditional Fixed-Route 
 
 ## 🚀 Project Overview
 
-Modern urban mobility requires efficient, scalable, and dynamic solutions. This project models a transition from traditional static public transit to a dynamic, demand-responsive system using autonomous shuttles. 
+Modern urban mobility requires efficient, scalable, and dynamic solutions. This project models a transition from traditional static public transit to a dynamic, demand-responsive system using autonomous mid-sized buses, which are often referred to as autonomous shuttles.
 
 **Key Features Evaluated:**
 * **Traditional System:** Fixed routes, static schedules, and standard-capacity buses.
