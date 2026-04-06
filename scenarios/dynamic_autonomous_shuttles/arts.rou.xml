@@ -3,10 +3,10 @@
     
     <vType id="arts" vClass="taxi" 
            guiShape="bus" 
-           length="8.4" 
+           length="6.9" 
            width="2.3" 
            height="3.15"
-           personCapacity="50"
+           personCapacity="40"
            color="red"
            maxSpeed="22.22"
            accel="1.0"
