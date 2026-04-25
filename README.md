@@ -5,6 +5,14 @@ This repository contains the simulation framework, algorithms, and scenarios dev
 The project evaluates and compares the performance of **Traditional Fixed-Route Buses** against a **Dynamic Autonomous Stop-Based Transit (DAST)** system. Built on top of the SUMO (Simulation of Urban MObility) traffic simulator, this framework is designed to handle high-density demand (5,000–15,000 daily trips) using a limited fleet of midi-sized autonomous buses.
 
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5c031ebf-4071-4d1c-9270-591cbe6d12b5" height="260" />
+</div>
+
+
+
+
+
 ## 📑 Table of Contents
 1. [Project Overview](#project-overview)
 2. [Repository Structure](#repository-structure)
